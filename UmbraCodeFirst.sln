@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UmbraCodeFirst", "UmbraCodeFirst\UmbraCodeFirst.csproj", "{ACF3CA78-CB86-4C0D-BAAE-1C6DF2ECB41C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UmbraCodeFirst.UI", "UmbraCodeFirst.UI\UmbraCodeFirst.UI.csproj", "{19315CD5-B56C-4574-B249-44CC2BD60A86}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UmbraCodeFirst.Sample", "UmbraCodeFirst.Sample\UmbraCodeFirst.Sample.csproj", "{13952F6F-C2B2-46C7-B7C3-BE9C8FAE18BF}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{ACF3CA78-CB86-4C0D-BAAE-1C6DF2ECB41C}.Debug|Any CPU.ActiveCfg = Release|Any CPU
+		{ACF3CA78-CB86-4C0D-BAAE-1C6DF2ECB41C}.Debug|Any CPU.Build.0 = Release|Any CPU
+		{ACF3CA78-CB86-4C0D-BAAE-1C6DF2ECB41C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ACF3CA78-CB86-4C0D-BAAE-1C6DF2ECB41C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{19315CD5-B56C-4574-B249-44CC2BD60A86}.Debug|Any CPU.ActiveCfg = Release|Any CPU
+		{19315CD5-B56C-4574-B249-44CC2BD60A86}.Debug|Any CPU.Build.0 = Release|Any CPU
+		{19315CD5-B56C-4574-B249-44CC2BD60A86}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{19315CD5-B56C-4574-B249-44CC2BD60A86}.Release|Any CPU.Build.0 = Release|Any CPU
+		{13952F6F-C2B2-46C7-B7C3-BE9C8FAE18BF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{13952F6F-C2B2-46C7-B7C3-BE9C8FAE18BF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{13952F6F-C2B2-46C7-B7C3-BE9C8FAE18BF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{13952F6F-C2B2-46C7-B7C3-BE9C8FAE18BF}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

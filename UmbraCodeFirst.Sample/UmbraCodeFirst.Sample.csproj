@@ -1,0 +1,213 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{13952F6F-C2B2-46C7-B7C3-BE9C8FAE18BF}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>UmbraCodeFirst.Sample</RootNamespace>
+    <AssemblyName>UmbraCodeFirst.Sample</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <UseIISExpress>false</UseIISExpress>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="cms, Version=1.0.4498.19837, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\cms.dll</HintPath>
+    </Reference>
+    <Reference Include="interfaces, Version=1.0.4497.23945, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="umbraco, Version=1.0.4500.21031, Culture=neutral, processorArchitecture=MSIL" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Domain\DocumentTypes\BasePage.cs" />
+    <Compile Include="Domain\DocumentTypes\StandardPage.cs" />
+    <Compile Include="Domain\MacroPropertyTypes\DictionaryItemMacroPropertyType.cs" />
+    <Compile Include="Domain\Tabs\ContentTab.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="masterpages\Inherited.master.cs">
+      <DependentUpon>Inherited.master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="masterpages\Inherited.master.designer.cs">
+      <DependentUpon>Inherited.master</DependentUpon>
+    </Compile>
+    <Compile Include="masterpages\Master.Master.cs">
+      <DependentUpon>Master.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="masterpages\Master.Master.designer.cs">
+      <DependentUpon>Master.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_Browsers\Form.browser" />
+    <Content Include="App_Browsers\w3cvalidator.browser" />
+    <Content Include="config\404handlers.config" />
+    <Content Include="config\ClientDependency.config" />
+    <Content Include="config\Dashboard.config" />
+    <Content Include="config\ExamineIndex.config" />
+    <Content Include="config\ExamineSettings.config" />
+    <Content Include="config\feedProxy.config" />
+    <Content Include="config\formHandlers.config" />
+    <Content Include="config\metablogConfig.config" />
+    <Content Include="config\restExtensions.config" />
+    <Content Include="config\scripting.config" />
+    <Content Include="config\Skinning.config" />
+    <Content Include="config\tinyMceConfig.config" />
+    <Content Include="config\umbracoSettings.config" />
+    <Content Include="config\UrlRewriting.config" />
+    <Content Include="config\xsltExtensions.config" />
+    <Content Include="Global.asax" />
+    <Content Include="web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="bin\App_Browsers.dll" />
+    <Content Include="bin\businesslogic.dll" />
+    <Content Include="bin\ClientDependency.Core.dll" />
+    <Content Include="bin\cms.dll" />
+    <Content Include="bin\controls.dll" />
+    <Content Include="bin\CookComputing.XmlRpcV2.dll" />
+    <Content Include="bin\Examine.dll" />
+    <Content Include="bin\HtmlAgilityPack.dll" />
+    <Content Include="bin\ICSharpCode.SharpZipLib.dll" />
+    <Content Include="bin\interfaces.dll" />
+    <Content Include="bin\Lucene.Net.dll" />
+    <Content Include="bin\Microsoft.ApplicationBlocks.Data.dll" />
+    <Content Include="bin\Microsoft.Web.Helpers.dll" />
+    <Content Include="bin\Microsoft.Web.Infrastructure.dll" />
+    <Content Include="bin\MySql.Data.dll" />
+    <Content Include="bin\Our.Umbraco.uGoLive.47x.dll" />
+    <Content Include="bin\Our.Umbraco.uGoLive.Checks.dll" />
+    <Content Include="bin\Our.Umbraco.uGoLive.dll" />
+    <Content Include="bin\System.Web.Helpers.dll" />
+    <Content Include="bin\System.Web.Razor.dll" />
+    <Content Include="bin\System.Web.WebPages.Deployment.dll" />
+    <Content Include="bin\System.Web.WebPages.dll" />
+    <Content Include="bin\System.Web.WebPages.Razor.dll" />
+    <Content Include="bin\TidyNet.dll" />
+    <Content Include="bin\umbraco.DataLayer.dll" />
+    <Content Include="bin\umbraco.dll" />
+    <Content Include="bin\umbraco.editorControls.dll" />
+    <Content Include="bin\umbraco.Linq.Core.dll" />
+    <Content Include="bin\umbraco.MacroEngines.dll" />
+    <Content Include="bin\umbraco.macroRenderings.dll" />
+    <Content Include="bin\umbraco.providers.dll" />
+    <Content Include="bin\umbraco.XmlSerializers.dll" />
+    <Content Include="bin\UmbracoExamine.dll" />
+    <Content Include="bin\UrlRewritingNet.UrlRewriter.dll" />
+    <Content Include="config\splashes\booting.aspx" />
+    <Content Include="config\splashes\noNodes.aspx" />
+    <Content Include="default.aspx" />
+    <Content Include="install\default.aspx" />
+    <Content Include="install\steps\database.ascx" />
+    <Content Include="install\steps\defaultUser.ascx" />
+    <Content Include="install\steps\license.ascx" />
+    <Content Include="install\steps\renaming.ascx" />
+    <Content Include="install\steps\skinning.ascx" />
+    <Content Include="install\steps\Skinning\loadStarterKitDesigns.ascx" />
+    <Content Include="install\steps\Skinning\loadStarterKits.ascx" />
+    <Content Include="install\steps\theend.ascx" />
+    <Content Include="install\steps\validatePermissions.ascx" />
+    <Content Include="install\steps\welcome.ascx" />
+    <Content Include="install\Title.ascx" />
+    <Content Include="install\utills\p.aspx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Code\" />
+    <Folder Include="App_Data\" />
+    <Folder Include="css\" />
+    <Folder Include="install\steps\Definitions\" />
+    <Folder Include="macroScripts\" />
+    <Folder Include="scripts\" />
+    <Folder Include="usercontrols\" />
+    <Folder Include="xslt\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\UmbraCodeFirst.UI\UmbraCodeFirst.UI.csproj">
+      <Project>{19315CD5-B56C-4574-B249-44CC2BD60A86}</Project>
+      <Name>UmbraCodeFirst.UI</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\UmbraCodeFirst\UmbraCodeFirst.csproj">
+      <Project>{ACF3CA78-CB86-4C0D-BAAE-1C6DF2ECB41C}</Project>
+      <Name>UmbraCodeFirst</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="masterpages\Master.Master" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="masterpages\Inherited.master" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="config\umbraCodeFirst.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>58163</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>
+          </IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,124 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{ACF3CA78-CB86-4C0D-BAAE-1C6DF2ECB41C}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>UmbraCodeFirst</RootNamespace>
+    <AssemblyName>UmbraCodeFirst</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="businesslogic">
+      <HintPath>..\[Referenced Assemblies]\businesslogic.dll</HintPath>
+    </Reference>
+    <Reference Include="cms">
+      <HintPath>..\[Referenced Assemblies]\cms.dll</HintPath>
+    </Reference>
+    <Reference Include="interfaces">
+      <HintPath>..\[Referenced Assemblies]\interfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="umbraco">
+      <HintPath>..\[Referenced Assemblies]\umbraco.dll</HintPath>
+    </Reference>
+    <Reference Include="umbraco.DataLayer">
+      <HintPath>..\DocumentTypeBuilder.Sample\Bin\umbraco.DataLayer.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Attributes\DocumentTypePropertyAttribute.cs" />
+    <Compile Include="Attributes\DocumentTypeAttribute.cs" />
+    <Compile Include="Attributes\DocumentTypeTemplateAttribute.cs" />
+    <Compile Include="Configuration\PageFactory\PageTypeMapElement.cs" />
+    <Compile Include="Configuration\PageFactory\PageTypeMapElementCollection.cs" />
+    <Compile Include="Configuration\Synchronization\SynchronizationElement.cs" />
+    <Compile Include="Configuration\UmbraCodeFirstConfiguration.cs" />
+    <Compile Include="Configuration\UmbraCodeFirstSection.cs" />
+    <Compile Include="Configuration\PageFactory\PageFactoryElement.cs" />
+    <Compile Include="Constants.cs" />
+    <Compile Include="DataTypes\DBType.cs" />
+    <Compile Include="DataTypes\ISynchronizableDataType.cs" />
+    <Compile Include="DefaultDataTypeDefinitions.cs" />
+    <Compile Include="Exceptions\DataTypeDefinitionUnknownException.cs" />
+    <Compile Include="Exceptions\DefaultTemplateException.cs" />
+    <Compile Include="DocumentNode.cs" />
+    <Compile Include="DocumentProperty.cs" />
+    <Compile Include="Exceptions\DocumentTypeBuilderException.cs" />
+    <Compile Include="Exceptions\DocumentTypeException.cs" />
+    <Compile Include="Extensions\TypeExtensions.cs" />
+    <Compile Include="Extensions\UmbracoPageBaseExtensions.cs" />
+    <Compile Include="DefaultTab.cs" />
+    <Compile Include="Exceptions\InvalidTabException.cs" />
+    <Compile Include="MacroPropertyTypes\MacroPropertyType.cs" />
+    <Compile Include="Synchronization\MacroPropertyTypeSynchronizer.cs" />
+    <Compile Include="Synchronization\DataTypeDefinitionSynchronizer.cs" />
+    <Compile Include="Synchronization\DocumentTypeSynchronizer.cs" />
+    <Compile Include="Synchronization\ISynchronizer.cs" />
+    <Compile Include="Synchronization\SynchronizationManager.cs" />
+    <Compile Include="Synchronization\TemplateSynchronizer.cs" />
+    <Compile Include="Tab.cs" />
+    <Compile Include="Extensions\ContentExtensions.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Extensions\DocumentExtensions.cs" />
+    <Compile Include="Extensions\GenericExtensions.cs" />
+    <Compile Include="Extensions\NodeExtensions.cs" />
+    <Compile Include="Factories\HttpContextFactory.cs" />
+    <Compile Include="Factories\IPageFactory.cs" />
+    <Compile Include="Factories\PageFactory.cs" />
+    <Compile Include="Global.cs" />
+    <Compile Include="IPageBase.cs" />
+    <Compile Include="Exceptions\PageNotFoundException.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Exceptions\TemplateTypeException.cs" />
+    <Compile Include="UI\MasterPageBaseOfT.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\UserControlBaseOfT.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UmbracoPageBase.cs" />
+    <Compile Include="Utility.cs" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

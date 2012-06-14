@@ -1,0 +1,10 @@
+﻿<%@ Master Language="C#" MasterPageFile="~/masterpages/Master.Master" AutoEventWireup="true" CodeBehind="Inherited.master.cs" Inherits="UmbraCodeFirst.Sample.masterpages.Inherited" %>
+
+<asp:Content ContentPlaceHolderID="Head" runat="server">
+       <!-- THIS IS STATIC CONTENT IN THE TEMPLATE -->
+</asp:Content>
+
+<asp:Content ContentPlaceHolderID="MainContent" runat="server">
+    This is the inherited page.
+    <%: CurrentPage.NodeName %>
+</asp:Content>
