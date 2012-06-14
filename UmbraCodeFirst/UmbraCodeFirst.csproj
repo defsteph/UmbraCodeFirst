@@ -75,10 +75,10 @@
     <Compile Include="Exceptions\DefaultTemplateException.cs" />
     <Compile Include="DocumentNode.cs" />
     <Compile Include="DocumentProperty.cs" />
-    <Compile Include="Exceptions\DocumentTypeBuilderException.cs" />
+    <Compile Include="Exceptions\UmbraCodeFirstException.cs" />
     <Compile Include="Exceptions\DocumentTypeException.cs" />
     <Compile Include="Extensions\TypeExtensions.cs" />
-    <Compile Include="Extensions\UmbracoPageBaseExtensions.cs" />
+    <Compile Include="Extensions\UmbracoModelBaseExtensions.cs" />
     <Compile Include="DefaultTab.cs" />
     <Compile Include="Exceptions\InvalidTabException.cs" />
     <Compile Include="MacroPropertyTypes\MacroPropertyType.cs" />
@@ -96,11 +96,11 @@
     <Compile Include="Extensions\GenericExtensions.cs" />
     <Compile Include="Extensions\NodeExtensions.cs" />
     <Compile Include="Factories\HttpContextFactory.cs" />
-    <Compile Include="Factories\IPageFactory.cs" />
-    <Compile Include="Factories\PageFactory.cs" />
+    <Compile Include="Factories\IModelFactory.cs" />
+    <Compile Include="Factories\ModelFactory.cs" />
     <Compile Include="Global.cs" />
-    <Compile Include="IPageBase.cs" />
-    <Compile Include="Exceptions\PageNotFoundException.cs" />
+    <Compile Include="IModelBase.cs" />
+    <Compile Include="Exceptions\ModelNotFoundException.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Exceptions\TemplateTypeException.cs" />
     <Compile Include="UI\MasterPageBaseOfT.cs">
@@ -109,7 +109,7 @@
     <Compile Include="UI\UserControlBaseOfT.cs">
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="UmbracoPageBase.cs" />
+    <Compile Include="UmbracoModelBase.cs" />
     <Compile Include="Utility.cs" />
   </ItemGroup>
   <ItemGroup />

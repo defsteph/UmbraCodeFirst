@@ -1,10 +1,14 @@
-﻿<%@ Master Language="C#" MasterPageFile="~/masterpages/Master.Master" AutoEventWireup="true" CodeBehind="Inherited.master.cs" Inherits="UmbraCodeFirst.Sample.masterpages.Inherited" %>
-
+﻿<%@ Master Language="C#" MasterPageFile="~/masterpages/Master.Master" CodeBehind="Inherited.master.cs" Inherits="UmbraCodeFirst.Sample.masterpages.Inherited" %>
 <asp:Content ContentPlaceHolderID="Head" runat="server">
-       <!-- THIS IS STATIC CONTENT IN THE TEMPLATE -->
+       <!-- THIS IS STATIC CONTENT IN THE INHERITED TEMPLATE -->
 </asp:Content>
 
 <asp:Content ContentPlaceHolderID="MainContent" runat="server">
-    This is the inherited page.
-    <%: CurrentPage.NodeName %>
+    <!--This is the inherited page. -->
+    <h1><%: Model.Heading %></h1>
+    
+    <% if (Model.GenericNumber > 0)
+       {%>
+    <p> Wow! A number! <%: Model.GenericNumber %></p>
+    <% } %>
 </asp:Content>

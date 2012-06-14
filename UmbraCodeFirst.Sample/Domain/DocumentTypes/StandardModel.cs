@@ -7,10 +7,10 @@ using UmbraCodeFirst.Sample.masterpages;
 
 namespace UmbraCodeFirst.Sample.Domain.DocumentTypes
 {
-    [DocumentType(Name = "Standard Page", Description = "A standard page.", IconUrl = "doc.gif", ThumbnailUrl = "docWithImage.png", AllowedChildDocumentTypes = new[]{typeof(StandardPage)}, DefaultTemplate = typeof(Inherited), AllowedTemplates = new[]{typeof(Inherited)})]
-    public class StandardPage : BasePage
+    [DocumentType(Name = "Standard Page", Description = "A standard page.", IconUrl = "doc.gif", ThumbnailUrl = "docWithImage.png", AllowedChildDocumentTypes = new[]{typeof(StandardModel)}, DefaultTemplate = typeof(Inherited), AllowedTemplates = new[]{typeof(Inherited)})]
+    public class StandardModel : BaseModel
     {
-        public StandardPage(INode node) : base(node)
+        public StandardModel(INode node) : base(node)
         {
 
         }
@@ -38,6 +38,14 @@ namespace UmbraCodeFirst.Sample.Domain.DocumentTypes
         {
             get { return this.GetPropertyValue(page => page.EmailAddress); }
             set { this.SetPropertyValue(page => page.EmailAddress, value); }
+        }
+
+        [DocumentTypeProperty(DataTypeId = DefaultDataTypeDefinitions.Numeric, Description = "A number", Name = "Number", Tab = typeof(ContentTab), SortOrder = 1000)]
+        public virtual int GenericNumber
+        {
+            get { return this.GetPropertyValue(page => page.GenericNumber); }
+            set { this.SetPropertyValue(page => page.GenericNumber, value); }
+
         }
 
     }

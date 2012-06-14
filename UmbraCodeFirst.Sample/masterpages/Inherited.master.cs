@@ -1,15 +1,13 @@
 ﻿using System;
 using UmbraCodeFirst.Attributes;
+using UmbraCodeFirst.Sample.Domain.DocumentTypes;
 using UmbraCodeFirst.UI;
 
 namespace UmbraCodeFirst.Sample.masterpages
 {
     [DocumentTypeTemplate(Name = "Inherited Template", MasterTemplate = typeof(Master))]
-    public partial class Inherited : MasterPageBase<UmbracoPageBase>
+    public partial class Inherited : MasterPageBase<StandardModel>
     {
-        protected void Page_Load(object sender, EventArgs e)
-        {
 
-        }
     }
 }

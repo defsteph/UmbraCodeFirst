@@ -7,13 +7,13 @@ using umbraco.interfaces;
 
 namespace UmbraCodeFirst
 {
-    public class UmbracoPageBase : IPageBase
+    public class UmbracoModelBase : IModelBase
     {
         private readonly INode _node;
 
         #region Constructors
-        protected UmbracoPageBase() { }
-        public UmbracoPageBase(INode node)
+        protected UmbracoModelBase() { }
+        public UmbracoModelBase(INode node)
         {
             _node = node;
         }
@@ -52,22 +52,22 @@ namespace UmbraCodeFirst
             return _node.GetProperty<T>(alias);
         }
 
-        public IList<IPageBase> GetChildren()
+        public IList<IModelBase> GetChildren()
         {
-            return _node.ChildrenAsList.Select(child => PageFactory.Instance.GetPage<UmbracoPageBase>(child)).Cast<IPageBase>().ToList();
+            return _node.ChildrenAsList.Select(child => ModelFactory.Instance.GetModel<UmbracoModelBase>(child)).Cast<IModelBase>().ToList();
         }
 
-        public IList<IPageBase> GetDescendants()
+        public IList<IModelBase> GetDescendants()
         {
-            return _node.GetDescendantNodes().Select(descendant => PageFactory.Instance.GetPage<UmbracoPageBase>(descendant)).Cast<IPageBase>().ToList();
+            return _node.GetDescendantNodes().Select(descendant => ModelFactory.Instance.GetModel<UmbracoModelBase>(descendant)).Cast<IModelBase>().ToList();
         }
 
-        public IList<T> GetChildrenOfType<T>() where T : IPageBase
+        public IList<T> GetChildrenOfType<T>() where T : IModelBase
         {
             return GetChildren().OfType<T>().ToList();
         }
 
-        public IList<T> GetDescendantsOfType<T>() where T : IPageBase
+        public IList<T> GetDescendantsOfType<T>() where T : IModelBase
         {
             return GetDescendants().OfType<T>().ToList();
         }

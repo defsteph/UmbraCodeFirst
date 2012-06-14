@@ -5,9 +5,9 @@ using umbraco.interfaces;
 
 namespace UmbraCodeFirst.UI
 {
-    public class PreviewPageBase : UmbracoPageBase
+    public class PreviewModelBase : UmbracoModelBase
     {
-        protected PreviewPageBase(INode node)
+        protected PreviewModelBase(INode node)
             : base(node)
         {
             

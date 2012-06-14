@@ -57,7 +57,7 @@
     <Compile Include="DataTypes\BaseDataEditor.cs" />
     <Compile Include="DataTypes\Preview\PreviewDataType.cs" />
     <Compile Include="DataTypes\Preview\PreviewEditor.cs" />
-    <Compile Include="PreviewPageBase.cs" />
+    <Compile Include="PreviewModelBase.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Tabs\ContentTab.cs" />
   </ItemGroup>

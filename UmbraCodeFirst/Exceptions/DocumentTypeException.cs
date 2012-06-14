@@ -4,7 +4,7 @@ namespace UmbraCodeFirst.Exceptions
 {
     public class DocumentTypeException : Exception
     {
-        public DocumentTypeException() : base("The type must inherit from UmbracoPageBase.")
+        public DocumentTypeException() : base("The type must inherit from UmbracoModelBase.")
         {
             
         }

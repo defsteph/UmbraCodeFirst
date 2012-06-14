@@ -6,9 +6,9 @@ using UmbraCodeFirst.UI;
 namespace UmbraCodeFirst.Sample.Domain.DocumentTypes
 {
     [DocumentType(Name = "Base Page", Description = "The root document type, that we re-use.")]
-    public abstract class BasePage : PreviewPageBase
+    public abstract class BaseModel : PreviewModelBase
     {
-        protected BasePage(INode node) : base(node)
+        protected BaseModel(INode node) : base(node)
         {
             
         }

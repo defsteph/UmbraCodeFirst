@@ -102,7 +102,7 @@ namespace UmbraCodeFirst.Synchronization
 
         private int EnsureDocumentType(Type type)
         {
-            if (type == typeof(UmbracoPageBase))
+            if (type == typeof(UmbracoModelBase))
                 return 0;
 
             ThrowExceptionIfNotInheritsFromUmbracoPageBase(type);
@@ -181,7 +181,7 @@ namespace UmbraCodeFirst.Synchronization
         {
             if (type == null)
                 throw new ArgumentNullException("type");
-            if (!type.IsSubclassOf(typeof(UmbracoPageBase)))
+            if (!type.IsSubclassOf(typeof(UmbracoModelBase)))
                 throw new DocumentTypeException();
         }
 

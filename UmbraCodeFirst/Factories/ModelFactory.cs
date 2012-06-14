@@ -10,13 +10,13 @@ using umbraco.NodeFactory;
 namespace UmbraCodeFirst.Factories
 {
 #pragma warning disable 612,618
-    public class PageFactory : IPageFactory
+    public class ModelFactory : IModelFactory
     {
         private readonly IDictionary<string, Type> _pageTypeMap = new Dictionary<string, Type>();
 
         #region Singleton
 
-        private PageFactory()
+        private ModelFactory()
         {
             LoadInstalledPageTypesByReflection();
             LoadInstalledPageTypesFromConfiguration();
@@ -24,7 +24,7 @@ namespace UmbraCodeFirst.Factories
 
         private void LoadInstalledPageTypesByReflection()
         {
-            var inherentPageTypes = TypeFinder.FindClassesOfType<IPageBase>(true, true);
+            var inherentPageTypes = TypeFinder.FindClassesOfType<IModelBase>(true, true);
             foreach (var inherentPageType in inherentPageTypes)
             {
                 var typeName = inherentPageType.Name;
@@ -53,44 +53,43 @@ namespace UmbraCodeFirst.Factories
             }
         }
 
-        private static IPageFactory _instance;
+        private static IModelFactory _instance;
 
         /// <summary>
         /// Singleton instance of the page factory
         /// </summary>
-        public static IPageFactory Instance
+        public static IModelFactory Instance
         {
-            get { return _instance ?? (_instance = new PageFactory()); }
+            get { return _instance ?? (_instance = new ModelFactory()); }
         }
 
         #endregion
 
-        #region IPageBase
-        public UmbracoPageBase GetPage(int? nodeId)
+        public UmbracoModelBase GetModel(int? nodeId)
         {
             if (nodeId.HasValue)
-                return GetPage(nodeId.Value);
+                return GetModel(nodeId.Value);
 
-            throw new PageNotFoundException();
+            throw new ModelNotFoundException();
         }
 
-        public UmbracoPageBase GetPage(int nodeId)
+        public UmbracoModelBase GetModel(int nodeId)
         {
             if (nodeId > 0)
-                return GetPage(new Node(nodeId));
+                return GetModel(new Node(nodeId));
 
-            throw new PageNotFoundException();
+            throw new ModelNotFoundException();
         }
 
-        public UmbracoPageBase GetPage(umbraco.presentation.nodeFactory.Node node)
+        public UmbracoModelBase GetModel(umbraco.presentation.nodeFactory.Node node)
         {
-            return GetPage(node.Id);
+            return GetModel(node.Id);
         }
 
-        public UmbracoPageBase GetPage(INode node)
+        public UmbracoModelBase GetModel(INode node)
         {
             if (node == null)
-                throw new PageNotFoundException();
+                throw new ModelNotFoundException();
 
             try
             {
@@ -99,50 +98,46 @@ namespace UmbraCodeFirst.Factories
                 if (type != null)
                 {
                     var typedObject = Activator.CreateInstance(type, node);
-                    var umbracoPageBase = typedObject as UmbracoPageBase;
+                    var umbracoPageBase = typedObject as UmbracoModelBase;
                     if (umbracoPageBase != null)
                         return umbracoPageBase;
                 }
-                return new UmbracoPageBase(node);
+                return new UmbracoModelBase(node);
             }
             catch
             {
-                return new UmbracoPageBase(node);
+                return new UmbracoModelBase(node);
             }
         }
-        #endregion
-
-        #region Generics
-        public T GetPage<T>(int? nodeId) where T : UmbracoPageBase
+        public T GetModel<T>(int? nodeId) where T : UmbracoModelBase
         {
             if (nodeId.HasValue)
-                return GetPage<T>(nodeId.Value);
+                return GetModel<T>(nodeId.Value);
 
-            throw new PageNotFoundException();
+            throw new ModelNotFoundException();
         }
 
-        public T GetPage<T>(int nodeId) where T : UmbracoPageBase
+        public T GetModel<T>(int nodeId) where T : UmbracoModelBase
         {
             if (nodeId > 0)
-                return GetPage<T>(new Node(nodeId));
+                return GetModel<T>(new Node(nodeId));
 
-            throw new PageNotFoundException();
+            throw new ModelNotFoundException();
         }
 
-        public T GetPage<T>(umbraco.presentation.nodeFactory.Node node) where T : UmbracoPageBase
+        public T GetModel<T>(umbraco.presentation.nodeFactory.Node node) where T : UmbracoModelBase
         {
-            return GetPage<T>(node.Id);
+            return GetModel<T>(node.Id);
         }
 
-        public T GetPage<T>(INode node) where T : UmbracoPageBase
+        public T GetModel<T>(INode node) where T : UmbracoModelBase
         {
-
             var type = GetTypeFromNodeTypeAlias(node.NodeTypeAlias);
 
             if (type != null)
                 return (T)Activator.CreateInstance(type, node);
 
-            return (T)GetPage(node);
+            return (T)GetModel(node);
         }
 
         private Type GetTypeFromNodeTypeAlias(string nodeTypeAlias)
@@ -150,47 +145,40 @@ namespace UmbraCodeFirst.Factories
             return _pageTypeMap.ContainsKey(nodeTypeAlias) ? _pageTypeMap[nodeTypeAlias] : null;
         }
 
-        #endregion
-
-        #region UnCached
-
-        public UmbracoPageBase GetPageFromDatabase(int documentId)
+        public UmbracoModelBase GetModelFromDatabase(int documentId)
         {
-            return GetPage(new DocumentNode(documentId));
+            return GetModel(new DocumentNode(documentId));
         }
 
-        public UmbracoPageBase GetPageFromDatabase(Document document)
+        public UmbracoModelBase GetModelFromDatabase(Document document)
         {
-            return GetPage(new DocumentNode(document.Id));
+            return GetModel(new DocumentNode(document.Id));
         }
 
-        public UmbracoPageBase GetPageFromDatabase(Document document, Guid version)
+        public UmbracoModelBase GetModelFromDatabase(Document document, Guid version)
         {
-            return GetPage(new DocumentNode(document.Id, version));
+            return GetModel(new DocumentNode(document.Id, version));
         }
 
-        public T GetPageFromDatabase<T>(int documentId) where T : UmbracoPageBase
+        public T GetModelFromDatabase<T>(int documentId) where T : UmbracoModelBase
         {
-            return GetPage<T>(new DocumentNode(documentId));
+            return GetModel<T>(new DocumentNode(documentId));
         }
 
-        public T GetPageFromDatabase<T>(Document document) where T : UmbracoPageBase
+        public T GetModelFromDatabase<T>(Document document) where T : UmbracoModelBase
         {
-            return GetPage<T>(new DocumentNode(document.Id));
+            return GetModel<T>(new DocumentNode(document.Id));
         }
 
-        public T GetPageFromDatabase<T>(Document document, Guid version) where T : UmbracoPageBase
+        public T GetModelFromDatabase<T>(Document document, Guid version) where T : UmbracoModelBase
         {
-            return GetPage<T>(new DocumentNode(document.Id, version));
+            return GetModel<T>(new DocumentNode(document.Id, version));
         }
 
-        public T GetPageFromDatabase<T>(int? id, Guid version) where T : UmbracoPageBase
+        public T GetModelFromDatabase<T>(int? id, Guid version) where T : UmbracoModelBase
         {
-            return !id.HasValue ? default(T) : GetPage<T>(new DocumentNode(id.Value, version));
+            return !id.HasValue ? default(T) : GetModel<T>(new DocumentNode(id.Value, version));
         }
-
-        #endregion
-
     }
 }
 #pragma warning restore 612,618

@@ -57,8 +57,8 @@
     <Reference Include="umbraco, Version=1.0.4500.21031, Culture=neutral, processorArchitecture=MSIL" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Domain\DocumentTypes\BasePage.cs" />
-    <Compile Include="Domain\DocumentTypes\StandardPage.cs" />
+    <Compile Include="Domain\DocumentTypes\BaseModel.cs" />
+    <Compile Include="Domain\DocumentTypes\StandardModel.cs" />
     <Compile Include="Domain\MacroPropertyTypes\DictionaryItemMacroPropertyType.cs" />
     <Compile Include="Domain\Tabs\ContentTab.cs" />
     <Compile Include="Global.asax.cs">

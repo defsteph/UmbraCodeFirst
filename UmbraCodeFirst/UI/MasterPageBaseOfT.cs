@@ -5,7 +5,7 @@ using umbraco.presentation;
 
 namespace UmbraCodeFirst.UI
 {
-    public abstract class MasterPageBase<T> : MasterPage where T : UmbracoPageBase
+    public abstract class MasterPageBase<T> : MasterPage where T : UmbracoModelBase
     {
         protected Guid CurrentVersion = Guid.Empty;
 
@@ -39,20 +39,20 @@ namespace UmbraCodeFirst.UI
             }
         }
 
-        private T _currentPage;
-        protected virtual T CurrentPage
+        private T _model;
+        protected virtual T Model
         {
             get
             {
-                if (_currentPage != null)
-                    return _currentPage;
+                if (_model != null)
+                    return _model;
 
                 if (InPreviewMode && CurrentVersion != Guid.Empty)
                 {
-                    _currentPage = PageFactory.Instance.GetPageFromDatabase<T>(UmbracoContext.Current.PageId, CurrentVersion);
+                    _model = ModelFactory.Instance.GetModelFromDatabase<T>(UmbracoContext.Current.PageId, CurrentVersion);
                 }
 
-                return _currentPage ?? (_currentPage = PageFactory.Instance.GetPage<T>(UmbracoContext.Current.PageId));
+                return _model ?? (_model = ModelFactory.Instance.GetModel<T>(UmbracoContext.Current.PageId));
             }
         }
     }

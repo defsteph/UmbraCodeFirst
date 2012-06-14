@@ -4,7 +4,7 @@ using umbraco.interfaces;
 
 namespace UmbraCodeFirst
 {
-    public interface IPageBase
+    public interface IModelBase
     {
         INode Node { get; }
         DateTime CreateDate { get; }
@@ -23,9 +23,9 @@ namespace UmbraCodeFirst
         string Path { get; }
 
         T GetPropertyValue<T>(string alias);
-        IList<IPageBase> GetChildren();
-        IList<IPageBase> GetDescendants();
-        IList<T> GetChildrenOfType<T>() where T : IPageBase;
-        IList<T> GetDescendantsOfType<T>() where T : IPageBase;
+        IList<IModelBase> GetChildren();
+        IList<IModelBase> GetDescendants();
+        IList<T> GetChildrenOfType<T>() where T : IModelBase;
+        IList<T> GetDescendantsOfType<T>() where T : IModelBase;
     }
 }
