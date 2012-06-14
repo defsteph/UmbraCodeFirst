@@ -8,4 +8,6 @@ A backup file of a clean install is included in the [Data] directory.
 
 The login/password for the back-office is admin/password.
 
+To enable synchronization of your code-first classes, change the enabled-attribute to true in the umbraCodeFirst.config file in the /config directory.
+
 Get hacking, and let me know if you have any ideas.
