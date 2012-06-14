@@ -1,0 +1,11 @@
+This is an implementation of a Code-First approach for Umbraco 4.7.x with a built-in preview engine.
+
+It's currently built against 4.7.2, but it shouldn't matter at the moment.
+
+To see how it's installed, look in the UmbraCodeFirst.Sample project.
+
+A backup file of a clean install is included in the [Data] directory.
+
+The login/password for the back-office is admin/password.
+
+Get hacking, and let me know if you have any ideas.
