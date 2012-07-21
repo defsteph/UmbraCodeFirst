@@ -2,12 +2,10 @@
 
 namespace UmbraCodeFirst
 {
-    public class Global : umbraco.Global
+    public class Global : System.Web.HttpApplication
     {
-        protected override void Application_Start(object sender, EventArgs e)
+        protected virtual void Application_Start(object sender, EventArgs e)
         {
-            base.Application_Start(sender, e);
-
             Synchronization.SynchronizationManager.Instance.Synchronize();
         }
     }
