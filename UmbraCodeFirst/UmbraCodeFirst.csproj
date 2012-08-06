@@ -54,7 +54,7 @@
       <HintPath>..\[Referenced Assemblies]\umbraco.dll</HintPath>
     </Reference>
     <Reference Include="umbraco.DataLayer">
-      <HintPath>..\DocumentTypeBuilder.Sample\Bin\umbraco.DataLayer.dll</HintPath>
+      <HintPath>..\[Referenced Assemblies]\umbraco.DataLayer.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
