@@ -33,11 +33,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="cms, Version=1.0.4498.19837, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>bin\cms.dll</HintPath>
+    <Reference Include="cms">
+      <HintPath>..\[Referenced Assemblies]\cms.dll</HintPath>
     </Reference>
-    <Reference Include="interfaces, Version=1.0.4497.23945, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="interfaces">
+      <HintPath>..\[Referenced Assemblies]\interfaces.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
@@ -54,7 +55,9 @@
     <Reference Include="System.Configuration" />
     <Reference Include="System.Web.Services" />
     <Reference Include="System.EnterpriseServices" />
-    <Reference Include="umbraco, Version=1.0.4500.21031, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="umbraco">
+      <HintPath>..\[Referenced Assemblies]\umbraco.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Domain\DocumentTypes\BaseModel.cs" />
